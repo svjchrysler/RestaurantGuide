@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import type {Node} from 'react';
 import {
   SafeAreaView,
@@ -18,6 +18,8 @@ import {
   View,
 } from 'react-native';
 
+import SplashScreen from 'react-native-splash-screen';
+
 import {
   Colors,
   DebugInstructions,
@@ -28,6 +30,11 @@ import {
 
 const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
+
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
+
   return (
     <View style={styles.sectionContainer}>
       <Text
