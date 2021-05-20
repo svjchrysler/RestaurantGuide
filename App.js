@@ -7,17 +7,6 @@
  */
 
 import React, {useEffect} from 'react';
-import type {Node} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
 import SplashScreen from 'react-native-splash-screen';
 import Navigation from './navigation';
 
@@ -26,17 +15,7 @@ const App = () => {
     SplashScreen.hide();
   }, []);
 
-  return (
-    <View style={styles.container}>
-      <Navigation />
-    </View>
-  );
+  return <Navigation />;
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 export default App;
